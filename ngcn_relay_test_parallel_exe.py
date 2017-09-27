@@ -259,7 +259,7 @@ def PlotCurrent(CurrentLst, ExecTime, XaxisStart, FCList, FTList, OnCList, OnTLi
 
 
 def main():
-    PrivKey = "C:\Users\karimme\Documents\sensity_labtop\Documents\id_medianodeKey"
+#    PrivKey = "C:\Users\karimme\Documents\sensity_labtop\Documents\id_medianodeKey"
 #    HostIp = "192.168.65.103"
 #    HostIp = "68.140.244.72"
     HostIp = "68.140.245.168"
@@ -278,6 +278,8 @@ def main():
     TimeList = list()
     StimeFlag = None
     SwitchOnFirst = None
+    csvfile = None
+    PrivKey = None
     xaxist = 0
     i = 0
 #    CYCLE = 1
@@ -293,6 +295,10 @@ def main():
 #    parser.add_argument("--HostIp", default='92.168.65.103', help="Specify the HostIP")
     parser.add_argument("--RType", default='main', help="Specify Relay Type either main or aux")
     parser.add_argument("--Debug", action="store_true", help="Print detailed messages to stdout")
+    parser.add_argument("--ipcsvfile", default='None', help="Specify CSV file with full path")
+    parser.add_argument("--PrivKey", default='None', help="Specify the HostIP")
+
+
 
     args = parser.parse_args()
     CycleCount = int(args.CycleCount)
@@ -301,11 +307,13 @@ def main():
     RelayOnOffDelay = float(args.RelayOnOffDelay)
 ##    RelayOnOffDelay  = RelayOnOffDelay
     RType = str(args.RType)
-##    HostIp = str(args.HostIp)
+    ipcsvfile = str(args.ipcsvfile)
+    PrivKey  = str(args.PrivKey)
+
     Debug = str(args.Debug)
 #    print "debug ....", Debug
 
-    ipcsvfile = "C:\Users\karimme\Documents\sensity_labtop\scripts\hostipaddress.csv"
+#    ipcsvfile = "C:\Users\karimme\Documents\sensity_labtop\scripts\hostipaddress.csv"
 
 
     print "Cyclecount = {}, StartDimmerValue = {} EndDimmerValue = {} RelayOnOffDelay = {} ".format(CycleCount,StartDimValue,EndDimValue,RelayOnOffDelay)
