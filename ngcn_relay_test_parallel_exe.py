@@ -126,6 +126,7 @@ def MeasureCurrent(connection, hostip, command, ROnOff, ExecDelay, ExStart, Swit
     FailedTime = None
     SwitchOnCurrent = None
     SwitchOnTime = None
+    power_status = 0
 
     if (Rtype == 'main'):
         Current_Type = 'main current'
